@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
-import About from "./components/About";
+import About from "./components/About/About";
 import {
   BrowserRouter as Router,
   Route,

@@ -12,7 +12,7 @@ import {
 } from "react-icons/ai";
 import "./styles.css"
 import Home from "./Home";
-import About from "./About";
+import About from "./About/About";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { CgFileDocument } from "react-icons/cg";
@@ -63,7 +63,7 @@ function NavBar() {
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/home"
+                to="/about"
                 onClick={() => updateExpanded(false)}
               >
                 <AiOutlineUser style={{ marginBottom: "2px" }} /> About
