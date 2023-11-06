@@ -1,0 +1,23 @@
+[
+    {
+        "titulo": "TP 1 - Formularios y Javascript",
+        "descripcion": "En este tp hay 3 inputs de materias diferenetes donde ingresaras las notas de estas. Tambien tiene dos botones, uno para hacer el promedio de estas y otro para Mostrar la materia que mayor nota obtuvo",
+        "imagen": "https://w7.pngwing.com/pngs/614/838/png-transparent-cat-kitty-creative-cat-cat.png",
+        "fecha": "27-03-2023",
+        "url": "https://w7.pngwing.com/pngs/614/838/png-transparent-cat-kitty-creative-cat-cat.png"
+    },
+    {
+        "titulo": "TP 4 - Gestor de Citas",
+        "descripcion": "El objetivo de este TP es comenzar a jugar con React.",
+         "imagen": "https://w7.pngwing.com/pngs/614/838/png-transparent-cat-kitty-creative-cat-cat.png",
+        "fecha": "12-06-2023",
+        "url": "https://github.com/JulianaPansowyFurno/TP4_GestordeCitas"
+    },
+    {
+        "titulo": "TP6_Banderas",
+        "descripcion": "Por medio de useEffect obtendremos todos los paises. Una vez recibida la respuesta, aleatoriamente obtendremos una y esa será la que el jugador deberá adivinar.        Guardaremos la seleccionada en un state, y el usuario tendra que ir arriesgando a que pais pertenece la bandera. Donde cada vez que adivine, suma 10 puntos y cada vez que no adivine, reste 1 punto.",
+         "imagen": "https://w7.pngwing.com/pngs/614/838/png-transparent-cat-kitty-creative-cat-cat.png",
+        "fecha": "12-06-2023",
+        "url": "https://github.com/JulianaPansowyFurno/TP6_Banderas"
+    }
+]
