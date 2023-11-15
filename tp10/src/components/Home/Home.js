@@ -1,9 +1,11 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import "./styles.css"
-import homeLogo from "./Assets/home-main.svg";
-import Type from "./Type";
-import Particle from "./Particle";
+import "../styles.css"
+import homeLogo from "../Assets/home-main.svg";
+import Type from "../Type";
+import Particle from "../Particle";
+import Home2 from "./Home2";
+import axios from 'axios';
 
 function Home() {
   return (
@@ -41,6 +43,7 @@ function Home() {
         </Row>
       </Container>
     </Container>
+    <Home2></Home2>
   </section>
   );
 }

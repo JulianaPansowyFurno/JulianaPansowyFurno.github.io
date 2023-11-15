@@ -11,7 +11,7 @@ import {
   AiOutlineUser,
 } from "react-icons/ai";
 import "./styles.css"
-import Home from "./Home";
+import Home from "../components/Home/Home";
 import About from "./About/About";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
