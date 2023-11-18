@@ -8,15 +8,30 @@ import { useParams } from "react-router-dom";
 function Detalle() {
     const {id} = useParams();
     const { data } = useProductsData([]);
-    const proyecto = data.find((elem) => elem.id === id)
+    const [proyecto, setProyecto] = useState(null);
+    const [count, setCount] = useState(0);
 
+    useEffect(() => {
+      data.filter(d => 
+        {
+          if(d.id == id){
+            setProyecto(d)
+          }
+        }
+      )      
+    }, [data])
+    console.log(data[0].id == id)
+    console.log(proyecto)
   return (
-    <Container fluid className="project-section">
+    <>
+    <p>{proyecto.id}</p>   
+    {/* <Container fluid className="project-section">
       <Particle />
-      <Container>
-       <h3>{proyecto.descripcion}</h3>
+      <Container> 
+        
       </Container>
-    </Container>
+    </Container> */}
+    </>
   );
 }
 

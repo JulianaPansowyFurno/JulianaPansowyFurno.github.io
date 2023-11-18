@@ -7,7 +7,7 @@ import {useProductsData} from "../MyContext"
 import { useNavigate } from "react-router-dom";
 
 function Projects() {
-  const { data } = useProductsData([]);
+  const { data } = useProductsData();
   const navigate = useNavigate();
  
   
