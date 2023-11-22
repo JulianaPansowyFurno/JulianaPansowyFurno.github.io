@@ -5,7 +5,7 @@ import Particle from "../Particle";
 import axios from 'axios';
 import {useProductsData} from "../MyContext"
 import { useNavigate } from "react-router-dom";
-import {favoritoContext} from "../favoritosContext";
+import {favoritoContext} from "../favoritosContext.js";
 
 
 function Projects() {
@@ -13,6 +13,11 @@ function Projects() {
   const navigate = useNavigate();
   const {favorito, setfavorito} = useContext(favoritoContext);
   
+  useEffect(() => {
+    
+    console.log(favorito);
+  
+}, []);
 
   return (
     <Container fluid className="project-section">
@@ -24,7 +29,7 @@ function Projects() {
         <p style={{ color: "white" }}>
           Estos son los Trabajos Practicos que fui haciendo en el año.
         </p>
-
+        {console.log(favorito)}
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           {data.map((c) =>
           <Col md={4} className="project-card">
@@ -34,7 +39,8 @@ function Projects() {
             title={c.titulo}
             corto={c.corto}
             ghLink={c.url}
-            onClickDetalle={() => navigate(`/detalle/${c.id}`)}          
+            onClickDetalle={() => navigate(`/detalle/${c.id}`)}   
+            onClickFavorito={() => setfavorito([...favorito, c.id])}       
           />
         </Col>
           )}

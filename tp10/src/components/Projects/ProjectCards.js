@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import { CgWebsite } from "react-icons/cg";
 import { FaHeart } from "react-icons/fa";
 import { BsGithub } from "react-icons/bs";
+import { IoIosInformationCircle } from "react-icons/io";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 
 
@@ -27,7 +28,7 @@ function ProjectCards(props) {
           variant="primary"
           onClick={props.onClickDetalle} // Add onClick handler here
         >
-          <IoIosInformationCircleOutline /> &nbsp;
+         <IoIosInformationCircle /> &nbsp;
           Detalle
         </Button>
 

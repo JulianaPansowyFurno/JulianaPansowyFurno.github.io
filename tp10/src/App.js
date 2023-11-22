@@ -5,6 +5,7 @@ import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import Detalle from "./components/Detalle"
 import { ProductsProvider } from "./components/MyContext";
+import {FavoritoProvider } from "./components/favoritosContext";
 import {
   BrowserRouter as Router,
   Route,
@@ -20,8 +21,9 @@ function App() {
 
   return (
     <ProductsProvider>
-    <Router>
-        <Navbar />
+      <FavoritoProvider>
+      <Router>
+          <Navbar />
         
         <Routes>
           <Route path="/" element={<Home />} />
@@ -32,6 +34,7 @@ function App() {
         <Footer />
         
     </Router>
+    </FavoritoProvider>
     </ProductsProvider>
   );
 }
