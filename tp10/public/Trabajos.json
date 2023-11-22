@@ -1,34 +1,57 @@
 [
     {
         "id": 0,
-        "titulo": "TP 1 - Formularios y Javascript",
+        "titulo": "Formularios y Javascript",
+        "corto": "A travez de tres input realizar validacion y manejo de datos con estos.",
         "descripcion": "En este tp hay 3 inputs de materias diferenetes donde ingresaras las notas de estas. Tambien tiene dos botones, uno para hacer el promedio de estas y otro para Mostrar la materia que mayor nota obtuvo",
         "imagen": "https://i.pinimg.com/474x/95/7f/c1/957fc1d05370489fe519edcb03d75ebc.jpg",
         "fecha": "27-03-2023",
-        "url": "https://soumyajitblogs.vercel.app/"
+        "url": "https://campus.ort.edu.ar/secundaria/almagro/informatica/tp/1910160/tp-1-formularios-y-javascript"
     },
     {
         "id": 1,
-        "titulo": "tp01",
-        "descripcion": "hola",
+        "titulo": "Buscador de Películas",
+        "corto": "Es una página en donde pueda buscar películas utilizando la API de OMDB",
+        "descripcion": "desarrollar una página en donde pueda buscar películas utilizando la API de OMDB. La página deberá mostrar un sector de filtros, donde pueda ingresar un texto a buscar (único parámetro obligatorio), un select donde pueda seleccionar si estoy buscando una película, serie o episodio, un input donde pueda ingresar el año y un botón BUSCAR. El botón buscar deberá llamar a la API de OMDB, y mostrar los resultados obtenidos en una tabla.",
         "imagen": "https://i.pinimg.com/474x/95/7f/c1/957fc1d05370489fe519edcb03d75ebc.jpg",
-        "fecha": "hola",
-        "url": "hola"
+        "fecha": "10-05-2023",
+        "url": "https://github.com/JulianaPansowyFurno/TpEfsi.git"
     },
     {
         "id": 2,
-        "titulo": "TP 2 - Formularios y Javascript",
-        "descripcion": "En este tp hay 3 inputs de materias diferenetes donde ingresaras las notas de estas. Tambien tiene dos botones, uno para hacer el promedio de estas y otro para Mostrar la materia que mayor nota obtuvo",
+        "titulo": "Gestor de Citas",
+        "corto": "Este tp es un gestor de citas medicas.",
+        "descripcion": "El objetivo de este TP es comenzar a jugar con React. Deberán pasar el HTML adjunto a componentes en un proyecto react creado con el comando: npx create-react-app citas",
         "imagen": "https://i.pinimg.com/474x/95/7f/c1/957fc1d05370489fe519edcb03d75ebc.jpg",
-        "fecha": "27-03-2023",
-        "url": "hola"
+        "fecha": "12-06-2023",
+        "url": "https://github.com/JulianaPansowyFurno/TP4_GestordeCitas.git"
     },
     {
         "id": 3,
-        "titulo": "tp04",
-        "descripcion": "hola",
+        "titulo": "Catálogo de Productos Parte 1 y 2",
+        "corto": "con un template hacer un catalogo de productos.",
+        "descripcion": "El objetivo del TP es hacer dinámico la web de productos, utilizando la api de https://dummyjson.com/docs/products. Dicha API provee métodos para listar productos, filtrar por categorías, obtener categorías y más. Hasta el momento, nuestro portal es estático y solo navega entre páginas sin tener contenido real. El foco del tp va a ser el de integrar todos los conocimientos vistos hasta el momento, sumando context para el almacenamiento de información global, común a varios componentes (por ejemplo, categorias, usuario, carrito,etc)",
         "imagen": "https://i.pinimg.com/474x/95/7f/c1/957fc1d05370489fe519edcb03d75ebc.jpg",
-        "fecha": "hola",
-        "url": "hola"
+        "fecha": "29/09/2023",
+        "url": "https://github.com/NadineLewit/TP_Productos.git"
+    },
+    {
+        "id": 4,
+        "titulo": "Jugando con banderas",
+        "corto": "El objetivos del TP 6 es hacer un juego.",
+        "descripcion": "Utilizaremos la API: https://countriesnow.space/api/v0.1/countries/flag/images (más info), la cual nos devuelve nombres de paises y sus banderas. Por medio de useEffect obtendremos todos los paises. Una vez recibida la respuesta, aleatoriamente obtendremos una y esa será la que el jugador deberá adivinar. Guardaremos la seleccionada en un state, y el usuario tendra que ir arriesgando a que pais pertenece la bandera. Donde cada vez que adivine, suma 10 puntos y cada vez que no adivine, reste 1 punto. Los puntos deberán estar guardados en un state y mostrados en pantalla.",
+        "imagen": "https://i.pinimg.com/474x/95/7f/c1/957fc1d05370489fe519edcb03d75ebc.jpg",
+        "fecha": "06-07-2023 1",
+        "url": "https://github.com/JulianaPansowyFurno/TP6_Banderas.git"
+    }
+    ,
+    {
+        "id": 4,
+        "titulo": "Directorio de personas",
+        "corto": "El objetivo de este TP es utilizar React Router para generar una aplicación en React que contenga más de una ruta.",
+        "descripcion": "La aplicación tendrá: Página index o home: mostrará un listado de personas, y un menú para la navegación entre páginas. Página persona: recibirá un ID por parámetro en la URL y mostrará la información de esa persona. Página estadísticas: Mostrará datos de todas las personas:Cuántos mayores de 35 años hay, Quién es la persona de mayor edad, y si hay más de una todos los nombres. Quién es la persona de menor edad, y si hay más de una todos los nombres. Página de contacto: mostrará un formulario para ingresar nombre, apellido, email y edad. No hace falta que haga nada el formulario..",
+        "imagen": "https://i.pinimg.com/474x/95/7f/c1/957fc1d05370489fe519edcb03d75ebc.jpg",
+        "fecha": "06-09-2023",
+        "url": "https://github.com/JulianaPansowyFurno/TP07_Directorio_de_personas.git"
     }
 ]

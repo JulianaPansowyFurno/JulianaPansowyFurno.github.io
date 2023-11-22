@@ -62,13 +62,19 @@ function Detalle() {
           </Card.Body>
         </Card>
         </Col>
-        <Col
-          md={5}
-          style={{ paddingTop: "120px", paddingBottom: "50px" }}
-          className="about-img"
-        >
-        </Col>
+        <Col style={{ paddingBottom: 15 }}>
+            <img
+              src={proyecto.imagen}
+              alt="home pic"
+              className="img-fluid"
+              style={{ maxHeight: "450px" }}
+            />
+          </Col>
+
+
       </Row>
+
+      
 
   
     </Container>

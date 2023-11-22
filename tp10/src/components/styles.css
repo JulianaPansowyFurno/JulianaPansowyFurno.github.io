@@ -472,6 +472,8 @@ html {
   }
   .boton{
     margin-left: 10px;
+    text-align: center !important;
+    justify-content: center;
   }
   
   .blog-card {

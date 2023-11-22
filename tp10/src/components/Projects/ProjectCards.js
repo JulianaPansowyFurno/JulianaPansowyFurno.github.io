@@ -2,8 +2,10 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { CgWebsite } from "react-icons/cg";
-import { CiSaveUp1 } from "react-icons/ci";
+import { FaHeart } from "react-icons/fa";
 import { BsGithub } from "react-icons/bs";
+import { IoIosInformationCircleOutline } from "react-icons/io";
+
 
 function ProjectCards(props) {
   
@@ -14,7 +16,7 @@ function ProjectCards(props) {
       <Card.Body>
         <Card.Title>{props.title}</Card.Title>
         <Card.Text style={{ textAlign: "justify" }}>
-          {props.description}
+          {props.corto}
         </Card.Text>
         <Button variant="primary" href={props.ghLink} target="_blank">
           <BsGithub /> &nbsp;
@@ -25,11 +27,17 @@ function ProjectCards(props) {
           variant="primary"
           onClick={props.onClickDetalle} // Add onClick handler here
         >
-          <BsGithub /> &nbsp;
+          <IoIosInformationCircleOutline /> &nbsp;
           Detalle
         </Button>
-        <Button className="boton" variant="primary" target="_blank">
-        <CiSaveUp1 />
+
+        <Button
+          className="boton"
+          variant="primary"
+          onClick={props.onClickFavorito} // Add onClick handler here
+        >
+          <FaHeart /> &nbsp;
+          Favorito
         </Button>
         {"\n"}
         {"\n"}

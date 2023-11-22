@@ -1,15 +1,17 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
 import axios from 'axios';
 import {useProductsData} from "../MyContext"
 import { useNavigate } from "react-router-dom";
+import {favoritoContext} from "../favoritosContext";
+
 
 function Projects() {
   const { data } = useProductsData();
   const navigate = useNavigate();
- 
+  const {favorito, setfavorito} = useContext(favoritoContext);
   
 
   return (
@@ -17,10 +19,10 @@ function Projects() {
       <Particle />
       <Container>
         <h1 className="project-heading">
-          My Recent <strong className="purple">Works </strong>
+         Mis recientes <strong className="purple"> craciones </strong>
         </h1>
         <p style={{ color: "white" }}>
-          Here are a few projects I've worked on recently.
+          Estos son los Trabajos Practicos que fui haciendo en el año.
         </p>
 
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
@@ -30,7 +32,7 @@ function Projects() {
           key={c.id}
             imgPath={c.imagen}
             title={c.titulo}
-            description={c.descripcion}
+            corto={c.corto}
             ghLink={c.url}
             onClickDetalle={() => navigate(`/detalle/${c.id}`)}          
           />
