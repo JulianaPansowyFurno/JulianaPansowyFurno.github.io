@@ -1,24 +1,33 @@
 import React, {useState, useEffect, useContext}  from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import Tilt from "react-parallax-tilt";
 import {
   AiFillGithub,
   AiOutlineTwitter,
   AiFillInstagram,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
-import axios from 'axios';
 import ProjectCard from "../Projects/ProjectCards";
 import { useNavigate } from "react-router-dom";
 import {favoritoContext} from "../favoritosContext.js";
 import {useProductsData} from "../MyContext";
+import swal from 'sweetalert';
 
 function Home2() {
   const navigate = useNavigate();
   const { data } = useProductsData(); 
-  const {favorito, setfavorito} = useContext(favoritoContext);
+  const { favorito, addFavorite, removeFavorite, resetFavorite  } = useContext(favoritoContext);
 
-  
+  const isFavorito = (id) => favorito.includes(id);
+
+  const FavoritoClick = (id) => {
+    if (id !== null && id!== undefined) {
+      if (!isFavorito(id)) {
+        addFavorite(id);
+      } else {
+        removeFavorite(id);
+      }
+    }
+  };
 
   return (
     <Container fluid className="home-about-section" id="about">
@@ -32,7 +41,8 @@ function Home2() {
             corto="con un template hacer un catalogo de productos."
             ghLink="https://github.com/NadineLewit/TP_Productos.git"
             onClickDetalle={() => navigate(`/detalle/3`)}
-            onClickFavorito={() => setfavorito(...3)}                 
+            isFavorito={isFavorito(3)}
+            onClickFavorito={() => {FavoritoClick(3)}}               
           />
         </Col> 
         {/* <Col md={4} className="project-card">

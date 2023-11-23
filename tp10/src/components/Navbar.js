@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
@@ -16,10 +16,17 @@ import About from "./About/About";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { CgFileDocument } from "react-icons/cg";
+import Badge from '@mui/material/Badge';
+import Stack from '@mui/material/Stack';
+import MailIcon from '@mui/icons-material/Mail';
+import { FaHeart } from "react-icons/fa";
+import {favoritoContext} from "./favoritosContext";
+import { CiFolderOn } from "react-icons/ci";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
+  const {favorito, setfavorito} = useContext(favoritoContext);
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -76,7 +83,23 @@ function NavBar() {
                 to="/creaciones"
                 onClick={() => updateExpanded(false)}
               >
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> Creaciones
+                <CiFolderOn  style={{ marginBottom: "2px" }} /> Creaciones
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/favorito"
+                onClick={() => updateExpanded(false)}
+              >
+                 <Badge  style={{ marginBottom: "2px" }} badgeContent={favorito.length} color="secondary"
+                 anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'left',
+                }}>
+                  <FaHeart color="action" />
+                </Badge>  Favorito
               </Nav.Link>
             </Nav.Item>
 

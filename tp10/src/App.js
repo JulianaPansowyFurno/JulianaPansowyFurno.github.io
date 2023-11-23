@@ -16,6 +16,7 @@ import "./index.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./components/Footer";
+import Favorito from "./components/Favoritos/Favorito";
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/creaciones" element={<Projects />} />
           <Route path="/detalle/:id" element={<Detalle />} />
+          <Route path="/favorito" element={<Favorito />} />
         </Routes>
         <Footer />
         

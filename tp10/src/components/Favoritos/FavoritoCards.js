@@ -8,7 +8,7 @@ import { IoIosInformationCircle } from "react-icons/io";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 
 
-function ProjectCards(props) {
+function FavoritoCards(props) {
   const isFavorito = props.isFavorito;
   return (
     
@@ -59,4 +59,4 @@ function ProjectCards(props) {
    
   );
 }
-export default ProjectCards;
+export default FavoritoCards;

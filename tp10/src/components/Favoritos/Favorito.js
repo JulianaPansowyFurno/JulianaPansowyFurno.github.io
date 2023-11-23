@@ -1,20 +1,19 @@
 import React, {useState, useEffect, useContext} from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import ProjectCard from "./ProjectCards";
+import FavoritoCards from "./FavoritoCards";
 import Particle from "../Particle";
 import axios from 'axios';
 import {useProductsData} from "../MyContext"
 import { useNavigate } from "react-router-dom";
 import {favoritoContext} from "../favoritosContext.js";
 import swal from 'sweetalert';
-import Button from "react-bootstrap/Button";
 
 
-function Projects() {
+function Favorito() {
   const { data } = useProductsData();
   const navigate = useNavigate();
   const { favorito, addFavorite, removeFavorite, resetFavorite  } = useContext(favoritoContext);
-
+  const [favs, setFavs] = useState([]);
   const isFavorito = (id) => favorito.includes(id);
 
   const FavoritoClick = (id) => {
@@ -26,22 +25,24 @@ function Projects() {
       }
     }
   };
-
-  const handleResetFavorites = () => {
-    resetFavorite(); 
-    console.log("se borro")
-  };
+  
 
   useEffect(() => {
-    FavoritoClick()
-  }, []);
+    if (data && favorito) {
+      const favoriteObjects = favorito.map((id) =>
+        data.find((elem) => elem.id === id)
+      );
+      console.log(favoriteObjects)
+      setFavs(favoriteObjects.filter(Boolean)); 
+    }
+    
+  }, [favorito, data]);
+
 
   return (
     <Container fluid className="project-section">
       <Particle />
       <Container>
-      
-        
         <h1 className="project-heading">
          Mis recientes <strong className="purple"> craciones </strong>
         </h1>
@@ -49,22 +50,25 @@ function Projects() {
           Estos son los Trabajos Practicos que fui haciendo en el año.
         </p>
         {console.log(favorito)}
-        <Button onClick={() => handleResetFavorites}>Reset Favorites</Button>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          {data.map((c) =>
+        {favs.length > 0 ? (
+            favs.map((c) => (
           <Col md={4} className="project-card">
-          <ProjectCard 
+          <FavoritoCards 
           key={c.id}
             imgPath={c.imagen}
             title={c.titulo}
             corto={c.corto}
             ghLink={c.url}
-            onClickDetalle={() => navigate(`/detalle/${c.id}`)} 
+            onClickDetalle={() => navigate(`/detalle/${c.id}`)}   
             isFavorito={isFavorito(c.id)}
-            onClickFavorito={() => {FavoritoClick(c.id)}} 
+            onClickFavorito={() => {FavoritoClick(c.id)}}     
           />
         </Col>
-          )}
+         ))
+         ) : (
+           <p>No hay elementos favoritos</p>
+         )}
 
           
         </Row>
@@ -73,4 +77,4 @@ function Projects() {
   );
 }
 
-export default Projects;
+export default Favorito;
