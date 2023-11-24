@@ -2,12 +2,9 @@ import React, {useState, useEffect, useContext} from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import axios from 'axios';
 import {useProductsData} from "../MyContext"
 import { useNavigate } from "react-router-dom";
 import {favoritoContext} from "../favoritosContext.js";
-import swal from 'sweetalert';
-import Button from "react-bootstrap/Button";
 
 
 function Projects() {
@@ -27,10 +24,7 @@ function Projects() {
     }
   };
 
-  const handleResetFavorites = () => {
-    resetFavorite(); 
-    console.log("se borro")
-  };
+  
 
   useEffect(() => {
     FavoritoClick()
@@ -48,8 +42,6 @@ function Projects() {
         <p style={{ color: "white" }}>
           Estos son los Trabajos Practicos que fui haciendo en el año.
         </p>
-        {console.log(favorito)}
-        <Button onClick={() => handleResetFavorites}>Reset Favorites</Button>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           {data.map((c) =>
           <Col md={4} className="project-card">

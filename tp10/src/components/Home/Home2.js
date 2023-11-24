@@ -9,22 +9,30 @@ import { FaLinkedinIn } from "react-icons/fa";
 import ProjectCard from "../Projects/ProjectCards";
 import { useNavigate } from "react-router-dom";
 import {favoritoContext} from "../favoritosContext.js";
-import {useProductsData} from "../MyContext";
 import swal from 'sweetalert';
+import Productos from "../Assets/Productos.PNG"
+import PF from "../Assets/pf.png"
+import Bandera from "../Assets/bandera.png"
 
 function Home2() {
   const navigate = useNavigate();
-  const { data } = useProductsData(); 
   const { favorito, addFavorite, removeFavorite, resetFavorite  } = useContext(favoritoContext);
+  const [favoritoId, setFavoritoId] = useState(null);
 
   const isFavorito = (id) => favorito.includes(id);
 
   const FavoritoClick = (id) => {
-    if (id !== null && id!== undefined) {
+    if (id !== null && id !== undefined) {
       if (!isFavorito(id)) {
-        addFavorite(id);
+        if (favoritoId === null) {
+          addFavorite(id);
+          setFavoritoId(id);
+        } else {
+          swal("Oops!", "You can only favorite one project at a time", "error");
+        }
       } else {
         removeFavorite(id);
+        setFavoritoId(null);
       }
     }
   };
@@ -34,50 +42,52 @@ function Home2() {
       <Container>
        
         <Row>
-           <Col md={4} className="project-card">
-          <ProjectCard 
-            imgPath="https://i.pinimg.com/474x/95/7f/c1/957fc1d05370489fe519edcb03d75ebc.jpg"
-            title="Catálogo de Productos Parte 1 y 2"
-            corto="con un template hacer un catalogo de productos."
-            ghLink="https://github.com/NadineLewit/TP_Productos.git"
-            onClickDetalle={() => navigate(`/detalle/3`)}
-            isFavorito={isFavorito(3)}
-            onClickFavorito={() => {FavoritoClick(3)}}               
-          />
-        </Col> 
-        {/* <Col md={4} className="project-card">
-          <ProjectCard 
-            imgPath="https://i.pinimg.com/474x/95/7f/c1/957fc1d05370489fe519edcb03d75ebc.jpg"
-            title="Catálogo de Productos Parte 1 y 2"
-            corto="con un template hacer un catalogo de productos."
-            ghLink="https://github.com/NadineLewit/TP_Productos.git"
-            onClickDetalle={() => navigate(`/detalle/3`)}
-            onClickFavorito={() => setfavorito(...3)}               
-          />
-        </Col> 
         <Col md={4} className="project-card">
-          <ProjectCard 
-            imgPath="https://i.pinimg.com/474x/95/7f/c1/957fc1d05370489fe519edcb03d75ebc.jpg"
-            title="Catálogo de Productos Parte 1 y 2"
-            corto="con un template hacer un catalogo de productos."
-            ghLink="https://github.com/NadineLewit/TP_Productos.git"
-            onClickDetalle={() => navigate(`/detalle/3`)}
-            onClickFavorito={() => setfavorito(c)}                 
-          />
-        </Col> */}
+            <ProjectCard 
+              imgPath={Productos}
+              title="Catálogo de Productos Parte 1 y 2"
+              corto="con un template hacer un catalogo de productos."
+              ghLink="https://github.com/NadineLewit/TP_Productos.git"
+              onClickDetalle={() => navigate(`/detalle/3`)}
+              isFavorito={isFavorito(3)}
+              onClickFavorito={() => FavoritoClick(3)}               
+            />
+          </Col> 
+          <Col md={4} className="project-card">
+            <ProjectCard 
+              imgPath={PF}
+              title="Proyecto Final"
+              corto="Un sistema de hospital que facilitar el acceso y la gestión de los turnos a los médicos y de los pacientes."
+              ghLink="https://github.com/JulianaPansowyFurno/PF.git"
+              onClickDetalle={() => navigate(`/detalle/6`)}
+              isFavorito={isFavorito(6)}
+              onClickFavorito={() => FavoritoClick(6)}               
+            />
+          </Col> 
+          <Col md={4} className="project-card">
+            <ProjectCard 
+              imgPath={Bandera}
+              title="Jugando con banderas"
+              corto="El objetivos del TP 6 es hacer un juego."
+              ghLink="https://github.com/JulianaPansowyFurno/TP6_Banderas.git"
+              onClickDetalle={() => navigate(`/detalle/4`)}
+              isFavorito={isFavorito(4)}
+              onClickFavorito={() => FavoritoClick(4)}               
+            />
+          </Col> 
         </Row>
 
       
         <Row>
           <Col md={12} className="home-about-social">
-            <h1>FIND ME ON</h1>
+            <h1>ENCONTRAME EN</h1>
             <p>
-              Feel free to <span className="purple">connect </span>with me
+              Sentite libre de <span className="purple"> contactarme </span>
             </p>
             <ul className="home-about-social-links">
               <li className="social-icons">
                 <a
-                  href="https://github.com/soumyajit4419"
+                  href="https://github.com/JulianaPansowyFurno"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
@@ -87,7 +97,7 @@ function Home2() {
               </li>
               <li className="social-icons">
                 <a
-                  href="https://twitter.com/Soumyajit4419"
+                  href="https://twitter.com/juliipansowyy"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
@@ -97,17 +107,7 @@ function Home2() {
               </li>
               <li className="social-icons">
                 <a
-                  href="https://www.linkedin.com/in/soumyajit4419/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <FaLinkedinIn />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://www.instagram.com/soumyajit4419"
+                  href="https://www.instagram.com/julipansowy/"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"

@@ -62,7 +62,7 @@ function Detalle() {
           </Card.Body>
         </Card>
         </Col>
-        <Col style={{ paddingBottom: 15 }}>
+        <Col style={{ paddingBottom: 15, borderRadius: 50 }}>
             <img
               src={proyecto.imagen}
               alt="home pic"

@@ -1,11 +1,9 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import { CgWebsite } from "react-icons/cg";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { BsGithub } from "react-icons/bs";
 import { IoIosInformationCircle } from "react-icons/io";
-import { IoIosInformationCircleOutline } from "react-icons/io";
 
 
 function FavoritoCards(props) {

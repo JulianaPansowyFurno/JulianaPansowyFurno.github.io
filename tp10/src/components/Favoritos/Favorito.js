@@ -44,7 +44,7 @@ function Favorito() {
       <Particle />
       <Container>
         <h1 className="project-heading">
-         Mis recientes <strong className="purple"> craciones </strong>
+         Mis recientes <strong className="purple"> creaciones </strong>
         </h1>
         <p style={{ color: "white" }}>
           Estos son los Trabajos Practicos que fui haciendo en el año.
@@ -67,7 +67,13 @@ function Favorito() {
         </Col>
          ))
          ) : (
-           <p>No hay elementos favoritos</p>
+         
+           <center>
+             <br></br>
+           <h1 className="project-heading">
+          No hay creaciones agregadas a <strong className="purple"> Mis Favoritos </strong>
+        </h1>
+        </center>
          )}
 
           

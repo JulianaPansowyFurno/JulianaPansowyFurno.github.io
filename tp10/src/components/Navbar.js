@@ -19,7 +19,7 @@ import { CgFileDocument } from "react-icons/cg";
 import Badge from '@mui/material/Badge';
 import Stack from '@mui/material/Stack';
 import MailIcon from '@mui/icons-material/Mail';
-import { FaHeart } from "react-icons/fa";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 import {favoritoContext} from "./favoritosContext";
 import { CiFolderOn } from "react-icons/ci";
 
@@ -103,6 +103,16 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
+            <Nav.Item className="fork-btn">
+              <Button
+                href="https://github.com/JulianaPansowyFurno"
+                target="_blank"
+                className="fork-btn-inner"
+              >
+                <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
+                <AiFillStar style={{ fontSize: "1.1em" }} />
+              </Button>
+            </Nav.Item>
             
           </Nav>
         </Navbar.Collapse>
