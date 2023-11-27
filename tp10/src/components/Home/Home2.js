@@ -16,7 +16,7 @@ import Bandera from "../Assets/bandera.png"
 
 function Home2() {
   const navigate = useNavigate();
-  const { favorito, addFavorite, removeFavorite, resetFavorite  } = useContext(favoritoContext);
+  const { favorito, addFavorite, removeFavorite } = useContext(favoritoContext);
   const [favoritoId, setFavoritoId] = useState(null);
 
   const isFavorito = (id) => favorito.includes(id);
@@ -82,7 +82,7 @@ function Home2() {
           <Col md={12} className="home-about-social">
             <h1>ENCONTRAME EN</h1>
             <p>
-              Sentite libre de <span className="purple"> contactarme </span>
+             Mis <span className="purple"> redes sociales </span>
             </p>
             <ul className="home-about-social-links">
               <li className="social-icons">
